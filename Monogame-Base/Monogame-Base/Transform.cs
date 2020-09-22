@@ -1,21 +1,33 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
 
 namespace Monogame_Base
 {
     class Transform
     {
-        public Vector3 position;
-        public Vector3 rotation;
-        public Vector3 scale;
+        private Vector3 _position;
+        private Vector3 _rotation;
+        private Vector3 _scale;
+
+        public Vector3 Position {
+            get { return _position; }
+            set { _position = value; }
+        }
+        public Vector3 Rotation
+        {
+            get { return _rotation; }
+            set { _rotation = value; }
+        }
+        public Vector3 Scale
+        {
+            get { return _scale; }
+            set { _scale = value; }
+        }
 
         private void initialize(Vector3 position, Vector3 rotation, Vector3 scale)
         {
-            this.position = position;
-            this.rotation = rotation;
-            this.scale = scale;
+            Position = position;
+            Rotation = rotation;
+            Scale = scale;
         }
 
         public Transform(Vector3 position, Vector3 rotation, Vector3 scale)
